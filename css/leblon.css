@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.roboto{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+* {margin:0; padding:0}
+/*html {
+  scroll-behavior: smooth;
+}*/
+body,html{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin:0 auto;
+   
+}
+
+.foto-slider{
+    height: 94vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+#topnav {
+    background-color: rgba(50, 56, 62, 1);
+    transition: all 0.5s;
+    font-family: 'Roboto Condensed', sans-serif;
+  
+}
+
+.sombra{
+    text-shadow: 1px 1px 3px #000000;
+}
+.img-areas{
+    width: 80%;
+    border-radius:10%;
+   /* border: 5px solid #411F37;*/
+}
+
+.texto-borde{
+    -webkit-text-stroke: 2px black;
+  color: transparent;
+}
+#logo-top-nav{
+    text-decoration: none;
+    transition: width 0.5s;
+    font-family: 'Roboto Condensed', sans-serif;
+   /* text-shadow: 1px 1px 3px #000000;*/
+    font-size: 2em;
+    color: white;
+    letter-spacing:0.1em;
+}
+.link{
+     
+    color:white;
+    letter-spacing:0.1em;
+    text-decoration: none;
+    font-size: 1.2em;
+    
+}
+.link:hover{
+    text-decoration: none;
+    color:white;
+    border-bottom-color:white;
+    border-bottom: solid 5px;
+   
+}
+.link:active{
+    text-decoration: none;
+    color: #452d3d;
+    border-bottom-color: #452d3d;
+    border-bottom: solid 5px;
+   
+}
+
+.link-2{
+     
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    
+}
+.link-2:hover{
+    color: black;
+    text-decoration: none;
+    border-bottom-color: black;
+    border-bottom: solid 5px;
+   
+}
+
+.one-edge-shadow {
+	-webkit-box-shadow: 0 8px 6px -6px gray;
+	   -moz-box-shadow: 0 8px 6px -6px gray;
+	        box-shadow: 0 8px 6px -6px gray;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.zoom{
+  transition: all .3s ease-in-out;
+  z-index:1;
+  position:relative;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  z-index:10;
+}
+
+.home .hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: black;
+  display: table-cell;
+  vertical-align: middle;
+  animation: 0.6s ease-out 1s 1 slideInFromLeft forwards;
+  opacity:0;
+  
+}
+.home .hero-text h1{
+    text-transform: uppercase;
+    width: 340px;
+    height: 82px;
+    color: rgba(255,255,255,1);
+    margin: auto auto;
+    font-size: 6em;
+    
+    
+    
+}
+.fondo-cheddar{
+    background-color: #eba23c;
+    color:#3d243a;
+    font-family: gothic;
+   
+   
+}
+
+.cheddar{
+    color:#FDA435;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 4em;
+  
+   }
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid gray;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+ #hexagon {
+    width: 152px;
+    height: 30px;
+    background: #2C3B4B;
+    position: relative;
+    top:7.5px;
+    }
+#hexagon:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right:152px;
+    width: 0;
+    height: 0;
+    border-top:15px solid transparent;
+    border-right:20px solid #2C3B4B;
+    border-bottom:15px solid transparent;
+}
+#hexagon:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:152px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 20px solid #2C3B4B;
+    border-bottom: 15px solid transparent;
+}
+#hexagon #letrahr{
+    display: table-cell;
+    color: white;
+    text-transform: uppercase;
+    width: 152px;
+    height: 30px;
+    vertical-align: middle; 
+}
+
+.text-gris{
+    color:#2C3B4B;
+}
+.line-h{
+    line-height: 1.5;
+}
+.img-icono{
+    background-color: #0099D8;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+.hero-image-card {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/top_nav/DESCUBRE-LA-NUEVA-TENDENCIA-COMIDA-EN-BOWLS_Grupo-Tello-Alimentacion.jpg");
+  height: 200px;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-image-card .hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.hero-image-card .hero-text h5{
+    text-transform:capitalize;
+    font-family: luna;
+    line-height: 1.8;
+    font-size: 1.2em;
+    text-align: center;
+}
+    
+
+
+
+.topnav .icon {
+  display: none;
+}
+.carousel-inner > .item.next,
+.carousel-inner > .item.active.right {
+  left: 0;
+  -webkit-transform: translate3d(33%, 0, 0);
+  -ms-transform: translate3d(33%, 0, 0);
+  -o-transform: translate3d(33%, 0, 0);
+  transform: translate3d(33%, 0, 0);
+}
+
+
+.carousel-inner > .item.prev,
+.carousel-inner > .item.active.left {
+  left: 0;
+  -webkit-transform: translate3d(-33%, 0, 0);
+  -ms-transform: translate3d(-33%, 0, 0);
+  -o-transform: translate3d(-33%, 0, 0);
+  transform: translate3d(-33%, 0, 0);
+}
+.btn-primary.style-2{
+    background-color: #ff3399;
+    border: none;
+    color: white;
+}
+.aparece{
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    margin-top: 100px;
+    
+}
+.sepia{
+    filter:sepia(70%);
+}
+.parallax {
+    background-image: url("../img/home/rolfing-argentina-buenos-aires-merlo-mardelplata.jpg");
+    min-height: 50%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+@keyframes slideInFromLeft {
+  0% {
+    top: 65%;
+    opacity:0.2;
+  }
+  100% {
+    top: 50%;
+    opacity:1;
+  }
+}
+.h4p{
+    
+}
+
+
+  
+ 
+
+/* Small devices MD (landscape phones, less than 768px) MD*/
+@media (max-width: 767.98px) {
+    .img-home{
+        max-width: 200px;
+    }
+    .h3t{
+        font-size: 0.9em;
+    }
+    
+    .img-areas{
+        width: 100%;
+        border-radius: 0%;
+    }
+    
+    .home .hero-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+   
+    }
+    .home .hero-text h2{
+        text-transform: uppercase;
+        width: 300px;
+        height: 41px;
+        color: rgba(255,255,255,1);
+        margin: auto auto;
+
+    }
+    #logo-top-nav{
+        text-decoration: none;
+        transition: width 0.5s;
+        font-family: 'Roboto Condensed', sans-serif;
+        /*text-shadow: 1px 1px 3px #000000;*/
+        font-size: 0.7em;
+    }
+    h2{
+        font-size:1.2em;
+    }
+    h5{
+        font-size:0.9em;
+    }
+    h4p{
+        font-size:0.5em;
+    }
+    .parallax {
+    background-image: url("../img/home/rolfing-argentina-buenos-aires-merlo-mardelplata-600.jpg");
+    min-height: 30%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+}
+

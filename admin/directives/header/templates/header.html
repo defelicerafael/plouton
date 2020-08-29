@@ -1,0 +1,48 @@
+<div layout="column" ng-cloak>
+    <md-toolbar class="md-hue-1" md-scroll-shrink ng-if="true">
+        <div class="md-toolbar-tools" >
+            <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSidenav()">
+              <md-icon md-svg-icon="img/icon/ic_menu_white_36px.svg"></md-icon>
+            </md-button>
+            <h3 flex md-truncate>PLOUTON ADMINISTRACI&Oacute;N</h3>
+        </div>
+    </md-toolbar>
+
+<section layout="row" flex>
+
+<md-sidenav class="md-sidenav-left" md-component-id="closeEventsDisabled"
+                  md-whiteframe="4" md-disable-close-events>
+    <md-toolbar class="md-hue-1">
+        <div layout="row" layout-align="end center" class="md-toolbar-tools">
+            <h3 flex md-truncate>MENU</h3>
+            <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSidenav()">
+              <md-icon md-svg-icon="img/icon/ic_close_white_32px.svg"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content layout-margin="">
+        <md-list flex>
+        <md-list-item class="md-1-line" ng-click="null">
+          <img ng-src="img/icon/album-24px.svg" class="md-avatar" />
+          <div class="md-list-item-text" layout="column">
+            <h4>PEDIDOS</h4>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-1-line" ng-click="null">
+          <img ng-src="img/icon/attach_money-24px.svg" class="md-avatar" />
+          <div class="md-list-item-text" layout="column">
+            <h4>PAGOS</h4>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-1-line" ng-click="null">
+          <img ng-src="img/icon/local_shipping-24px.svg" class="md-avatar" />
+          <div class="md-list-item-text" layout="column">
+            <h4>ENTREGAS</h4>
+          </div>
+        </md-list-item>
+        
+        </md-list>
+    </md-content>
+</md-sidenav>
+</section>
+</div>

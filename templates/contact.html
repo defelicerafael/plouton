@@ -1,0 +1,36 @@
+<div class="row no-gutters" id="contacto">
+    <div class="w-100">
+        <h1 class="text-center greek flopu mt-5 aparece">contactate con plout&#333;n</h1>
+    </div>
+    <div class="col-12 p-5 aparece">
+        <h3 id="resultado" class="greek text-center"></h3>
+        <div id="loader"></div>
+        <div id="formulario">
+            <form onsubmit="contacto.enviarEmail(); return false;">
+                <div class="form-group">
+                  <label for="name">NOMBRE Y APELLIDO *</label>
+                  <input type="text" class="form-control" id="name" name="nombre" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">EMAIL *</label>
+                  <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos esta informaci&oacute;n.</small>
+                </div>
+                <div class="form-group">
+                  <label for="telefono">TEL&Eacute;FONO *</label>
+                  <input type="text" class="form-control" id="telefono" aria-describedby="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="textarea">MENSAJE</label>
+                    <textarea class="form-control" id="textarea" rows="3" name="comentario" required></textarea>
+                </div>
+                <button type="submit" class="btn fondo-cheddar">Enviar</button>
+            </form>
+        </div>    
+    </div>    
+</div>    
+         
+  
+
+        
+    

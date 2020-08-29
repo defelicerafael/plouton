@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+.roboto{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.greek{
+    font-family: 'Marcellus SC', serif;
+}
+.greeklower{
+   font-family: 'Marcellus', serif; 
+}
+
+
+* {margin:0; padding:0}
+/*html {
+  scroll-behavior: smooth;
+}*/
+body,html{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    margin:0 auto;
+   
+}
+
+.foto-slider{
+    height: 94vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+#topnav {
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.5s;
+}
+
+#logo-top-nav{
+    text-decoration: none;
+    transition: width 0.5s;
+    font-size: 2em;
+    color: black;
+    letter-spacing:0.1em;
+    z-index:10;
+}
+
+.flopu{
+    letter-spacing:0.1em;
+    font-size: 1.2em;
+}
+
+.link{
+     
+    color: black;
+    letter-spacing:0.1em;
+    text-decoration: none;
+    font-size: 1.2em;
+    
+}
+.link:hover{
+    text-decoration: none;
+    color: black;
+    border-bottom-color:white;
+    border-bottom: solid 5px;
+   
+}
+.link:active{
+    text-decoration: none;
+    color: black;
+    border-bottom-color: #452d3d;
+    border-bottom: solid 5px;
+   
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.aparece{
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    margin-top: 100px;
+    
+} 
+ 
+.carta_natal_acrab_negrob{
+    background-color:rgb(186,116,104);
+    height: 80vh;
+    width: auto;
+    margin: 0 auto;
+   
+}
+.carta_natal_acrab_negro{
+    background-color:rgb(222,224,211);
+    height: 80vh;
+    width: auto;
+    margin: 0 auto;
+   
+}
+.carta_natal_img{
+    height: 80vh;
+    width: auto;
+}
+
+.carta_natal_img_ninies{
+    height: 80vh;
+    width: auto;
+    border: 1px solid grey;
+}
+
+.colores{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    border: 0.2px solid gainsboro;
+    margin: 2px;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/*LOADER */
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+.fadein{
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.comohago{
+    width: 30%;
+}
+
+
+/* Small devices MD (landscape phones, less than 768px) MD*/
+@media (max-width: 767.98px) {
+    
+    #logo-top-nav{
+        text-decoration: none;
+        transition: width 0.5s;
+        font-size: 0.7em;
+    }
+    .comohago{
+        width: 80%;
+    }
+    .flopu{
+        letter-spacing:0.1em;
+        font-size: 0.8em;
+    }
+}
+
+

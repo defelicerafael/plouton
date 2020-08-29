@@ -1,0 +1,296 @@
+<header></header>
+<md-content layout="column" layout-padding ng-init="ctrl.traerReseniasMostrarSi('no');">
+    <section>
+            <md-tabs md-dynamic-height md-border-bottom >
+                <md-tab label="PEDIDOS" >
+                    <md-subheader class="md-primary"> PEDIDOS ({{ctrl.reseniasL}}) </md-subheader>
+                    <md-progress-linear md-mode="indeterminate" ng-show="ctrl.loadingMostrarTodo"></md-progress-linear>
+                    <md-list flex>    
+                        <md-list-item class="md-3-line" ng-repeat="datos in ctrl.resenias track by $index">
+                            <img src="img/icon/album-24px.svg" class="md-avatar" alt="tapa del disco {{datos.titulo}}" />
+                                <div class="md-list-item-text" layout="column">
+                                    <h3>Pedido: {{datos.id}} | {{datos.nombre}} | Fecha: {{datos.fecha_de_compra}}</h3>
+                                    <h4>{{datos.email}} | {{datos.celular}}</h4>
+                                    <p>Marco: {{datos.marco}} | Tama&ntilde;o {{datos.tamano}} |Carta de: {{datos.carta_natal_nombre}} </p>
+                                </div>
+                                
+                                <md-button class="md-secondary md-icon-button" ng-href="#!/panel/admin/editar/id/{{datos.id}}" aria-label="edit">
+                                    <md-icon md-svg-icon="img/icon/create-24px.svg"></md-icon>
+                                </md-button>
+                                <md-button class="md-secondary md-icon-button" ng-href="#!/panel/admin/pagos/id/{{datos.id}}" aria-label="edit">
+                                    <md-icon md-svg-icon="img/icon/attach_money-24px.svg"></md-icon>
+                                </md-button>
+                                <md-button class="md-secondary md-icon-button" ng-href="#!/panel/admin/entregas/id/{{datos.id}}" aria-label="edit">
+                                    <md-icon md-svg-icon="img/icon/local_shipping-24px.svg"></md-icon>
+                                </md-button>
+                                <md-button class="md-secondary md-icon-button" ng-click="ctrl.Delete(datos.id,'pedidos');" aria-label="delete" style="background-color:red">
+                                    <md-icon md-svg-icon="img/icon/ic_delete_white_24px.svg"></md-icon>
+                                </md-button>
+                          <md-divider></md-divider>  
+                          </md-list-item>
+                        
+                    </md-list>
+                </md-tab>
+                <md-tab label="NUEVO PEDIDO">
+                    <md-subheader class="md-primary"> NUEVO PEDIDO </md-subheader>
+                    <form novalidate class="simple-form" ng-submit="ctrl.insert({'nombre':ctrl.item.nombre,'email':ctrl.item.email,'carta_natal_nombre':ctrl.item.carta_natal_nombre,'nacimiento':ctrl.item.nacimiento,'hora':ctrl.item.hora,'pais':ctrl.item.pais,'provincia':ctrl.item.provincia,'ciudad':ctrl.item.ciudad,'tamano':ctrl.item.tamano,'marco':ctrl.item.marco,'forma_de_pago':ctrl.item.forma_de_pago,'modelo':ctrl.item.modelo,'color':ctrl.item.color,'elemento':ctrl.item.elemento,'precio':ctrl.item.precio,'celular':ctrl.item.celular},'pedidos')">
+                        <md-input-container class="md-block">
+                            <label>nombre</label>
+                            <input required name="nombre" ng-model="ctrl.item.nombre" type='text'>
+                            <div ng-messages="projectForm.nombre.$error">
+                              <div ng-message="required">Le solicito por favor el nombre del disco o single</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>email</label>
+                            <input required name="email" ng-model="ctrl.item.email" type='text'>
+                            <div ng-messages="projectForm.email.$error">
+                              <div ng-message="required">Le solicito por favor el email</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>nombre en la carta natal</label>
+                            <input required name="carta_natal_nombre" ng-model="ctrl.item.carta_natal_nombre" type='text'>
+                            <div ng-messages="projectForm.carta_natal_nombre.$error">
+                              <div ng-message="required">Le solicito por favor el nombre en la carta natal</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>nacimiento (aaaa-mm-dd)</label>
+                            <input required name="nacimiento" ng-model="ctrl.item.nacimiento" type='text'>
+                            <div ng-messages="projectForm.nacimiento.$error">
+                              <div ng-message="required">Le solicito por favor la fecha de nacimiento (aaaa-mm-dd)</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>hora (hh:mm)</label>
+                            <input required name="hora" ng-model="ctrl.item.hora" type='text'>
+                            <div ng-messages="projectForm.hora.$error">
+                              <div ng-message="required">Le solicito por favor la hora</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>pais</label>
+                            <input required name="pais" ng-model="ctrl.item.pais" type='text'>
+                            <div ng-messages="projectForm.pais.$error">
+                              <div ng-message="required">Le solicito por favor el pais</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>provincia</label>
+                            <input required name="provincia" ng-model="ctrl.item.provincia" type='text'>
+                            <div ng-messages="projectForm.provincia.$error">
+                              <div ng-message="required">Le solicito por favor la provincia</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>ciudad</label>
+                            <input required name="ciudad" ng-model="ctrl.item.ciudad" type='text'>
+                            <div ng-messages="projectForm.ciudad.$error">
+                              <div ng-message="required">Le solicito por favor la ciudad</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>tama&ntilde;o</label>
+                            <input required name="tamano" ng-model="ctrl.item.tamano" type='text'>
+                            <div ng-messages="projectForm.tamano.$error">
+                              <div ng-message="required">Le solicito por favor el tamaño</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>marco</label>
+                            <input required name="marco" ng-model="ctrl.item.marco" type='text'>
+                            <div ng-messages="projectForm.marco.$error">
+                              <div ng-message="required">Le solicito por favor el marco</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>forma de pago</label>
+                            <input required name="forma_de_pago" ng-model="ctrl.item.forma_de_pago" type='text'>
+                            <div ng-messages="projectForm.forma_de_pago.$error">
+                              <div ng-message="required">Le solicito por favor la formad de pago</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>modelo</label>
+                            <input required name="modelo" ng-model="ctrl.item.modelo" type='text'>
+                            <div ng-messages="projectForm.modelo.$error">
+                              <div ng-message="required">Le solicito por favor el modelo</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>color</label>
+                            <input required name="color" ng-model="ctrl.item.color" type='text'>
+                            <div ng-messages="projectForm.color.$error">
+                              <div ng-message="required">Le solicito por favor el color</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>elemento</label>
+                            <input required name="elemento" ng-model="ctrl.item.elemento" type='text'>
+                            <div ng-messages="projectForm.elemento.$error">
+                              <div ng-message="required">Le solicito por favor el elemento</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>precio</label>
+                            <input required name="precio" ng-model="ctrl.item.precio" type='text'>
+                            <div ng-messages="projectForm.precio.$error">
+                              <div ng-message="required">Le solicito por favor el precio</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>celular</label>
+                            <input required name="celular" ng-model="ctrl.item.celular" type='text'>
+                            <div ng-messages="projectForm.celular.$error">
+                              <div ng-message="required">Le solicito por favor el numero del celular</div>
+                            </div>
+                        </md-input-container>
+                        
+                        
+                        <div layout="row" layout-align="end center">   
+                            <md-button type="submit" class="md-raised md-primary">CREAR</md-button>
+                        </div>
+                    </form>
+             </md-tab>
+             <md-tab label="SEGUIMIENTOS" >
+                    <md-subheader class="md-primary"> SEGUIMIENTOS </md-subheader>
+                    <md-progress-linear md-mode="indeterminate" ng-show="ctrl.loadingMostrarTodo"></md-progress-linear>
+                    <md-list flex>    
+                        <md-list-item class="md-3-line" ng-repeat="datos in ctrl.resenias track by $index">
+                            <img src="img/icon/album-24px.svg" class="md-avatar" alt="tapa del disco {{datos.titulo}}" />
+                                <div class="md-list-item-text" layout="column">
+                                    <h3>Pedido: {{datos.id}} | {{datos.nombre}}</h3>
+                                    <h6>Marco | Dise&ntilde;o | Impresi&oacute;n | Empaquetar | Listo</h6>
+                                </div>
+                                
+                                <md-checkbox ng-model="datos.pedi_marco" ng-true-value="'true'" ng-false-value="'false'" aria-label="Checkbox 1" ng-change="ctrl.Edit({'pedi_marco':datos.pedi_marco},'pedidos',datos.id)"></md-checkbox>
+                                <md-checkbox ng-model="datos.hice_disenio" ng-true-value="'true'" ng-false-value="'false'" aria-label="Checkbox 2" ng-change="ctrl.Edit({'hice_disenio':datos.hice_disenio},'pedidos',datos.id)"></md-checkbox>
+                                <md-checkbox ng-model="datos.imprimir" ng-true-value="'true'" ng-false-value="'false'" aria-label="Checkbox 3" ng-change="ctrl.Edit({'imprimir':datos.imprimir},'pedidos',datos.id)"></md-checkbox>
+                                <md-checkbox ng-model="datos.empaquetando"ng-true-value="'true'" ng-false-value="'false'" aria-label="Checkbox 4" ng-change="ctrl.Edit({'empaquetando':datos.empaquetando},'pedidos',datos.id)"></md-checkbox>
+                                <md-checkbox ng-model="datos.listo" ng-true-value="'true'" ng-false-value="'false'" aria-label="Checkbox 5" ng-change="ctrl.Edit({'listo':datos.listo},'pedidos',datos.id)"></md-checkbox>
+                          <md-divider></md-divider>  
+                          </md-list-item>
+                    </md-list>
+                </md-tab>   
+             <md-tab label="FACTURACI&Oacute;N" ng-init="ctrl.gastosTotal()">
+                    <md-subheader class="md-primary"> FACTURACI&Oacute;N </md-subheader>
+                    <h3>* Chequear que en precio de los pedidos no este el signo $ (pesos)</h3>
+                    <md-progress-linear md-mode="indeterminate" ng-show="ctrl.loadingMostrarTodo"></md-progress-linear>
+                    <md-card  md-theme-watch>
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Productos Pagos.</span>
+                            <span class="md-subhead" ng-init="ctrl.sumas_sql('pedidos','precio','si',0)">Facturaci&oacute;n: <b>${{ctrl.total[0]}}</b></span>
+                          </md-card-title-text>
+                          <md-card-title-media>
+                            <div class="md-media-sm card-media"></div>
+                          </md-card-title-media>
+                        </md-card-title>
+                    </md-card>
+                    <md-card  md-theme-watch>
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Productos NO pagos.</span>
+                            <span class="md-subhead" ng-init="ctrl.sumas_sql('pedidos','precio','',1)">Facturaci&oacute;n: <b>${{ctrl.total[1]}}</b></span>
+                          </md-card-title-text>
+                          <md-card-title-media>
+                            <div class="md-media-sm card-media"></div>
+                          </md-card-title-media>
+                        </md-card-title>
+                    </md-card>
+                    <md-card  md-theme-watch>
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Facturado hasta hoy:</span>
+                            <span class="md-subhead" ng-init="ctrl.sumaTotal('pedidos','precio')">Facturaci&oacute;n: <b>${{ctrl.SumaTotal}}</b></span>
+                          </md-card-title-text>
+                          <md-card-title-media>
+                            <div class="md-media-sm card-media"></div>
+                          </md-card-title-media>
+                        </md-card-title>
+                    </md-card>
+                    <md-card  md-theme-watch>
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Facturado menos los gastos:</span>
+                            <span class="md-headline">TOTAL: ${{ctrl.total[0]-ctrl.gastoTotal}}</span>
+                          </md-card-title-text>
+                          <md-card-title-media>
+                            <div class="md-media-sm card-media"></div>
+                          </md-card-title-media>
+                        </md-card-title>
+                    </md-card>
+            </md-tab>
+            <md-tab label="GASTOS">
+                    <md-subheader class="md-primary"> GASTOS TOTAL: {{ctrl.gastoTotal}}</md-subheader>
+                    <md-progress-linear md-mode="indeterminate" ng-show="ctrl.loadingMostrarTodo"></md-progress-linear>
+                    <form novalidate class="simple-form" ng-submit="ctrl.insert({'gasto':ctrl.gasto.gasto,'precio':ctrl.gasto.precio,'fecha':ctrl.gasto.fecha},'gastos')">
+                        <md-input-container class="md-block">
+                            <label>Fecha (aaaa-mm-dd)</label>
+                            <input required name="fecha" ng-model="ctrl.gasto.fecha" type='text'>
+                            <div ng-messages="projectForm.fecha.$error">
+                              <div ng-message="required">Le solicito por favor la fecha del gasto</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Descripci&oacute;n</label>
+                            <input required name="nombre" ng-model="ctrl.gasto.gasto" type='text'>
+                            <div ng-messages="projectForm.nombre.$error">
+                              <div ng-message="required">Le solicito por favor la descripci&oacute;n del gasto</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>$</label>
+                            <input required name="number" ng-model="ctrl.gasto.precio" type='number'>
+                            <div ng-messages="projectForm.number.$error">
+                              <div ng-message="required">Le solicito por favor el valor en pesos del gasto</div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row" layout-align="end center">   
+                            <md-button type="submit" class="md-raised md-primary">INGRESAR</md-button>
+                        </div>
+                    </form>
+                    <hr>
+                    <md-list flex ng-init="ctrl.traerGastos('no');">    
+                        <md-list-item class="md-3-line" ng-repeat="datos in ctrl.gastos track by $index">
+                                <div class="md-list-item-text" layout="column">
+                                    <p>Descripci&oacute;n: {{datos.gasto}}  | ${{datos.precio}} | {{datos.fecha}}</p>
+                                </div>
+                                <md-button class="md-secondary md-icon-button" ng-click="ctrl.Delete(datos.id,'gastos');" aria-label="delete" style="background-color:red">
+                                    <md-icon md-svg-icon="img/icon/ic_delete_white_24px.svg"></md-icon>
+                                </md-button>
+                                <md-divider></md-divider>  
+                        </md-list-item>
+                        
+                    </md-list>
+            </md-tab>
+            <md-tab label="MARCOS" >
+                    <md-subheader class="md-primary"> MARCOS Y TAMA&Ntilde;OS </md-subheader>
+                    <md-progress-linear md-mode="indeterminate" ng-show="ctrl.loadingMostrarTodo"></md-progress-linear>
+                    <form novalidate class="simple-form" ng-submit="ctrl.traerMarcos(ctrl.marcos.id);">
+                        <md-input-container class="md-block">
+                            <label>BUSCAR MARCOS CON ID MAYOR A:</label>
+                            <input required name="number" ng-model="ctrl.marcos.id" type='number'>
+                            <div ng-messages="projectForm.number.$error">
+                              <div ng-message="required">Le solicito por favor el valor del ID</div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row" layout-align="end center">   
+                            <md-button type="submit" class="md-raised md-primary">INGRESAR</md-button>
+                        </div>
+                        <md-list-item class="md-1-line" ng-repeat="(key, value) in ctrl.marcos track by $index">
+                            <div class="md-list-item-text" layout="column">
+                                <p>{{key}} : {{value}}</p>
+                            </div>
+                            <md-divider></md-divider>  
+                        </md-list-item>
+                    </form>    
+                </md-tab>    
+         </md-tabs>  
+        
+        
+      
+     </section>  
+  </md-content>
+

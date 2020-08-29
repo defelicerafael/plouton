@@ -1,0 +1,76 @@
+<header></header>
+<md-content  layout-padding ng-init="ctrl.traerReseniasMostrarSi(ctrl.idAlbum)">
+    <md-subheader class="md-primary"> EDITAR PEDIDOS </md-subheader>
+    <form novalidate class="simple-form" ng-submit="ctrl.Edit({'nombre':ctrl.resenias[0].nombre,'email':ctrl.resenias[0].email,'carta_natal_nombre':ctrl.resenias[0].carta_natal_nombre,'nacimiento':ctrl.resenias[0].nacimiento,'hora':ctrl.resenias[0].hora,'pais':ctrl.resenias[0].pais,'provincia':ctrl.resenias[0].provincia,'ciudad':ctrl.resenias[0].ciudad,'tamano':ctrl.resenias[0].tamano,'marco':ctrl.resenias[0].marco,'forma_de_pago':ctrl.resenias[0].forma_de_pago,'modelo':ctrl.resenias[0].modelo,'color':ctrl.resenias[0].color,'elemento':ctrl.resenias[0].elemento,'precio':ctrl.resenias[0].precio,'celular':ctrl.resenias[0].celular},'pedidos',ctrl.resenias[0].id)">
+        <md-input-container class="md-block">
+            <label>nombre</label>
+            <input required name="nombre" ng-model="ctrl.resenias[0].nombre" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>email</label>
+            <input required name="email" ng-model="ctrl.resenias[0].email" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>nombre en la carta natal</label>
+            <input required name="carta_natal_nombre" ng-model="ctrl.resenias[0].carta_natal_nombre" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>nacimiento (aaaa-mm-dd)</label>
+            <input required name="nacimiento" ng-model="ctrl.resenias[0].nacimiento" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>hora (hh:mm)</label>
+            <input required name="hora" ng-model="ctrl.resenias[0].hora" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>pais</label>
+            <input required name="pais" ng-model="ctrl.resenias[0].pais" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>provincia</label>
+            <input required name="provincia" ng-model="ctrl.resenias[0].provincia" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>ciudad</label>
+            <input required name="ciudad" ng-model="ctrl.resenias[0].ciudad" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>tama&ntilde;o</label>
+            <input required name="tamano" ng-model="ctrl.resenias[0].tamano" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>marco</label>
+            <input required name="marco" ng-model="ctrl.resenias[0].marco" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>forma de pago</label>
+            <input required name="forma_de_pago" ng-model="ctrl.resenias[0].forma_de_pago" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>modelo</label>
+            <input required name="modelo" ng-model="ctrl.resenias[0].modelo" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>color</label>
+            <input required name="color" ng-model="ctrl.resenias[0].color" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>elemento</label>
+            <input required name="elemento" ng-model="ctrl.resenias[0].elemento" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>precio</label>
+            <input required name="precio" ng-model="ctrl.resenias[0].precio" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>celular</label>
+            <input required name="celular" ng-model="ctrl.resenias[0].celular" type='text'>
+        </md-input-container>
+        <text-angular ng-model="ctrl.resenias[0].comentarios"></text-angular>
+
+        <div layout="row" layout-align="end center">   
+            <md-button type="submit" class="md-raised md-primary">EDITAR</md-button>
+        </div>
+        <md-progress-linear md-mode="indeterminate" ng-show="ctrl.isEditing"></md-progress-linear>
+    </form>
+</md-content>    

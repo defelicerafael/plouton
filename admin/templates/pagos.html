@@ -1,0 +1,31 @@
+<header></header>
+<md-content  layout-padding ng-init="ctrl.traerReseniasMostrarSi(ctrl.idAlbum)">
+    <md-subheader class="md-primary"> PAGOS </md-subheader>
+    <form novalidate class="simple-form" ng-submit="ctrl.Edit({'pago':ctrl.resenias[0].pago,'fecha_de_pago':ctrl.resenias[0].fecha_de_pago,'fecha_de_entrega':ctrl.resenias[0].fecha_de_entrega,'factura':ctrl.resenias[0].factura,'comprobante_de_pago':ctrl.resenias[0].comprobante_de_pago},'pedidos',ctrl.resenias[0].id)">
+        <md-input-container class="md-block">
+            <label>pago?</label>
+            <input ng-model="ctrl.resenias[0].pago" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Fecha de pago (aaaa-mm-dd)</label>
+            <input ng-model="ctrl.resenias[0].fecha_de_pago" type='text' ng-change="ctrl.traerEntrega(ctrl.resenias[0].fecha_de_pago,14);">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Fecha de Entrega (aaaa-mm-dd)</label>
+            <input ng-model="ctrl.resenias[0].fecha_de_entrega" type='text'>
+        </md-input-container>
+        
+        <md-input-container class="md-block">
+            <label>factura</label>
+            <input ng-model="ctrl.resenias[0].factura" type='text'>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>comprobante de pago</label>
+            <input ng-model="ctrl.resenias[0].comprobante_de_pago" type='text'>
+        </md-input-container>
+        <div layout="row" layout-align="end center">   
+            <md-button type="submit" class="md-raised md-primary">EDITAR</md-button>
+        </div>
+        <md-progress-linear md-mode="indeterminate" ng-show="ctrl.isEditing"></md-progress-linear>
+    </form>
+</md-content>    
